@@ -1,5 +1,10 @@
 # Prerequisites
 *.d
+.vs/
+bin/
+FairyIsland/x64
+*.suo
+*.sln.docstates 
 
 # Compiled Object files
 *.slo
