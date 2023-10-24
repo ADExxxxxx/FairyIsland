@@ -1,10 +1,22 @@
 workspace "FairyIsland"
     architecture "x64"
-    configurations { "Debug", "Release" }
+    configurations 
+    { 
+        "Debug", 
+        "Release",
+        "Dist" 
+    }
+
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 project "FairyIsland"
-    kind "ConsoleApp"
+    location "FairyIsland"
+    kind "SharedLib"
     language "C++"
+    targetdir ("bin/" .. outputdir .."/%{prj.name}")
+    objdir ("bin-int/" .. outputdir .."/%{prj.name}")
+
+
     files { "**.h", "**.cpp" }
 
     filter { "configurations:Debug" }
