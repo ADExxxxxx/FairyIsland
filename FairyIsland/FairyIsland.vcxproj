@@ -19,12 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\FairyIsland\Log.h" />
     <ClInclude Include="src\FairyIsland.h" />
     <ClInclude Include="src\FairyIsland\Application.h" />
     <ClInclude Include="src\FairyIsland\Core.h" />
     <ClInclude Include="src\FairyIsland\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\FairyIsland\Log.cpp" />
     <ClCompile Include="src\FairyIsland\Application.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -132,6 +134,7 @@
       <PreprocessorDefinitions>FI_PLATFORM_WINDOWS;FI_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)FairyIsland\vendor\spdlog\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,6 +150,7 @@
       <PreprocessorDefinitions>FI_PLATFORM_WINDOWS;FI_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)FairyIsland\vendor\spdlog\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

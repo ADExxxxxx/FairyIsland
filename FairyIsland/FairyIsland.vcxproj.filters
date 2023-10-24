@@ -27,9 +27,15 @@
     <ClInclude Include="src\FairyIsland\EntryPoint.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\FairyIsland\Log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\FairyIsland\Application.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FairyIsland\Log.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

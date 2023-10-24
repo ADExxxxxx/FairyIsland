@@ -1,0 +1,3 @@
+[submodule "FairyIsland/vendor/spdlog"]
+	path = FairyIsland/vendor/spdlog
+	url = https://github.com/gabime/spdlog
