@@ -16,7 +16,8 @@ project "FairyIsland"
     cppdialect "C++17"
     targetdir ("bin/" .. outputdir .."/%{prj.name}")
     objdir ("bin-int/" .. outputdir .."/%{prj.name}")
-
+    pchheader "pch.h"
+    pchsource "FairyIsland/src/pch.cpp"
 
     files 
     { 
@@ -26,6 +27,7 @@ project "FairyIsland"
 
     includedirs
     {
+        "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include"
     }
 
@@ -41,7 +43,7 @@ project "FairyIsland"
 
         postbuildcommands
         {
-            ("{COPY} %{cfg.buildtarget.relpath} ./bin/" .. outputdir .. "/Sandbox")
+            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
         }
     
     filter "configurations:Debug"
@@ -74,7 +76,7 @@ project "SandBox"
 
     includedirs
     {
-        "%{prj.name}/vendor/spdlog/include",
+        "FairyIsland/vendor/spdlog/include",
         "FairyIsland/src"
     }
 

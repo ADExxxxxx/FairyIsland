@@ -10,7 +10,4 @@
 	#error FairyIsland Only Support Windows!
 #endif
 
-namespace FI 
-{
-
-}
+#define BIT(x) (1 << x)
