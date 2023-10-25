@@ -4,3 +4,4 @@
 [submodule "FairyIsland/vendor/GLFW"]
 	path = FairyIsland/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+	ignore = dirty
