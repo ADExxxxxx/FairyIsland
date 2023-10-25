@@ -8,12 +8,18 @@ workspace "FairyIsland"
     }
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+--- Include SubModule
+IncludeDir = {}
+IncludeDir["GLFW"] = "FairyIsland/vendor/GLFW/include"
+
+include "FairyIsland/vendor/GLFW"
 
 project "FairyIsland"
     location "FairyIsland"
     kind "SharedLib"
     language "C++"
     cppdialect "C++17"
+    
     targetdir ("bin/" .. outputdir .."/%{prj.name}")
     objdir ("bin-int/" .. outputdir .."/%{prj.name}")
     pchheader "pch.h"
@@ -28,7 +34,14 @@ project "FairyIsland"
     includedirs
     {
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}"
+    }
+
+    links
+    {
+        "GLFW",
+        "opengl32.lib"
     }
 
     filter "system:windows"
