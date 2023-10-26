@@ -7,6 +7,8 @@ public:
 	ExampleLayer()
 		: Layer("Example") {}
 
+	virtual ~ExampleLayer() = default;
+
 	void OnUpdate() override
 	{
 		FI_INFO("ExampleLayer::Update");
@@ -23,7 +25,8 @@ class SandBox : public FI::Application
 public:
 	SandBox()
 	{
-		PushLayer(new ExampleLayer);
+		PushLayer(new ExampleLayer());
+		PushOverlay(new FI::ImGuiLayer());
 	}
 	~SandBox()
 	{

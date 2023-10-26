@@ -12,6 +12,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include <FairyIsland/Core.h>
 #include <FairyIsland/Log.h>
 
 #ifdef FI_PLATFORM_WINDOWS

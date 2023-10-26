@@ -3,6 +3,10 @@
 #include <FairyIsland/Events/ApplicationEvent.h>
 #include <FairyIsland/Events/KeyEvent.h>
 #include <FairyIsland/Events/MouseEvent.h>
+
+#include <Glad/glad.h>
+#include <GLFW/glfw3.h>
+
 #include "WindowsGLFWWindow.h"
 
 namespace FI
@@ -48,6 +52,11 @@ namespace FI
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+
+		// ´´½¨OpenGL
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		FI_CORE_ASSERT(status, "Failed to initialize Glad!");
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

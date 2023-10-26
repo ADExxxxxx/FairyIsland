@@ -2,8 +2,7 @@
 
 #include <FairyIsland/Window.h>
 
-#include <GLFW/glfw3.h>
-
+struct GLFWwindow;
 namespace FI
 {
 	class WindowsGLFWWindow : public Window

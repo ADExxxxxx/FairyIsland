@@ -5,3 +5,7 @@
 	path = FairyIsland/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
 	ignore = dirty
+[submodule "FairyIsland/vendor/imgui"]
+	path = FairyIsland/vendor/imgui
+	url = https://github.com/TheCherno/imgui
+	ignore = dirty

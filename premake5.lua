@@ -11,8 +11,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 --- Include SubModule
 IncludeDir = {}
 IncludeDir["GLFW"] = "FairyIsland/vendor/GLFW/include"
+IncludeDir["Glad"] = "FairyIsland/vendor/Glad/include"
+IncludeDir["ImGui"] = "FairyIsland/vendor/imgui"
 
 include "FairyIsland/vendor/GLFW"
+include "FairyIsland/vendor/Glad"
+include "FairyIsland/vendor/imgui"
 
 project "FairyIsland"
     location "FairyIsland"
@@ -35,12 +39,16 @@ project "FairyIsland"
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}",
+        "%{IncludeDir.ImGui}"
     }
 
     links
     {
         "GLFW",
+        "Glad",
+        "ImGui",
         "opengl32.lib"
     }
 
@@ -51,7 +59,8 @@ project "FairyIsland"
         defines
         {
             "FI_PLATFORM_WINDOWS",
-            "FI_BUILD_DLL"
+            "FI_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands
