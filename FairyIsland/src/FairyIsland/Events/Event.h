@@ -25,6 +25,7 @@ namespace FI
 		// Keyboard Event
 		KeyPressed,
 		KeyReleased,
+		KeyTyped,
 
 		// Mouse Event
 		MouseButtonPressed,

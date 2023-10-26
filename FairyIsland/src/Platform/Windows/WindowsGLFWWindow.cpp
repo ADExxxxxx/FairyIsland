@@ -109,6 +109,14 @@ namespace FI
 			}
 		});
 
+		//
+		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int codepoint) 
+		{
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+			KeyTypedEvent event(codepoint);
+			data.EventCallback(event);
+		});
+
 		// 鼠标点击事件
 		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods)
 		{
@@ -147,6 +155,8 @@ namespace FI
 			MouseMovedEvent event((float)xpos, (float)ypos);
 			data.EventCallback(event);
 		});
+
+		
 	}
 
 	void WindowsGLFWWindow::ShutDown()
