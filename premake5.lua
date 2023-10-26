@@ -61,14 +61,17 @@ project "FairyIsland"
     
     filter "configurations:Debug"
         defines "FI_DEBUG"
+        buildoptions "/MDd"
         symbols "on"
     
     filter "configurations:Release"
         defines "FI_RELEASE"
+        buildoptions "/MD"
         optimize "on"
 
     filter "configurations:Dist"
         defines "FI_DIST"
+        buildoptions "/MD"
         optimize "on"
 
 

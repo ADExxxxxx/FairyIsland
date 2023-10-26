@@ -11,11 +11,11 @@
 #endif
 
 #ifdef FI_ENABLE_ASSERTS
-	#define HZ_ASSERT(x, ...) { if(!(x)) { FI_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-	#define HZ_CORE_ASSERT(x, ...) { if(!(x)) { FI_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define FI_ASSERT(x, ...) { if(!(x)) { FI_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define FI_CORE_ASSERT(x, ...) { if(!(x)) { FI_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 #else
-	#define HZ_ASSERT(x, ...)
-	#define HZ_CORE_ASSERT(x, ...)
+	#define FI_ASSERT(x, ...)
+	#define FI_CORE_ASSERT(x, ...)
 #endif // FI_ENABLE_ASSERTS
 
 
