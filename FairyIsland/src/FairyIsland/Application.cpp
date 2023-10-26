@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "Application.h"
-
+#include <FairyIsland/Input.h>
 #include <glad/glad.h>
 
 namespace FI
@@ -34,6 +34,9 @@ namespace FI
 			glClear(GL_COLOR_BUFFER_BIT);
 	
 			for(Layer* layer : m_LayerStack) layer->OnUpdate();
+
+			auto [x, y] = Input::GetMousePosition();
+			FI_CORE_TRACE("({0}, {1})", x, y);
 
 			m_Window->OnUpdate();
 		}

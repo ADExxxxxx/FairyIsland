@@ -11,12 +11,12 @@ public:
 
 	void OnUpdate() override
 	{
-		FI_INFO("ExampleLayer::Update");
+		// FI_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(FI::Event& event) override
 	{
-		FI_TRACE("{0}", event);
+		// FI_TRACE("{0}", event);
 	}
 };
 
